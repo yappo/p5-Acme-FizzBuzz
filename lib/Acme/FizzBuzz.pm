@@ -7,7 +7,7 @@ our $VERSION = '0.01';
 use vars qw( $FizzBuzz_counter );
 
 
-foreach ( $FizzBuzz_counter = 0 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0 ; $FizzBuzz_counter ++ ) {
+foreach ( $FizzBuzz_counter = 1 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0 ; $FizzBuzz_counter ++ ) {
     my $Fizz_printed_flag;
     my $Buzz_printed_flag;
 
@@ -34,7 +34,8 @@ foreach ( $FizzBuzz_counter = 0 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0
         print ( sprintf ( "%d" , $FizzBuzz_counter ) ) ;
     }
 
-    print ( sprintf ( "%s" , "\n" ) ) ;
+    print ( sprintf ( "%s" , "\n" ) ) 
+        if $FizzBuzz_counter < 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0;
 }
 
 
