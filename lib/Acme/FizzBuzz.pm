@@ -34,8 +34,9 @@ foreach ( $FizzBuzz_counter = 1 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0
         print ( sprintf ( "%d" , $FizzBuzz_counter ) ) ;
     }
 
-    print ( sprintf ( "%s" , "\n" ) ) 
-        if $FizzBuzz_counter < 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0;
+    if ( $FizzBuzz_counter < 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0 || ( ( $INC{"Test/More.pm"} || '' ) ne '' ) ) {
+        print ( sprintf ( "%s" , "\n" ) );
+    }
 }
 
 
