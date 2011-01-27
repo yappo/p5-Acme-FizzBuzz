@@ -57,7 +57,7 @@ Acme::FizzBuzz is The FizzBuzz program can be written shortest.
 
 =head1 AUTHOR
 
-Kazuhiro Osawa E<lt>ko@yappo.ne.jpE<gt>
+Kazuhiro Osawa E<lt>yappo {{{{}}}} shibuya {ddddoooott} plE<gt>
 
 =head1 SEE ALSO
 

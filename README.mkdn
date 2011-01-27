@@ -12,7 +12,7 @@ Acme::FizzBuzz is The FizzBuzz program can be written shortest.
 
 # AUTHOR
 
-Kazuhiro Osawa <ko@yappo.ne.jp>
+Kazuhiro Osawa <yappo {{{{}}}} shibuya {ddddoooott} pl>
 
 # SEE ALSO
 
