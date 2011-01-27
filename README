@@ -4,6 +4,11 @@ NAME
 SYNOPSIS
       $ perl -MAcme::FizzBuzz -e ''
 
+    or
+
+      $ export PERL5OPT="-MAcme::FizzBuzz"
+      $ echo '' | perl
+
 DESCRIPTION
     Acme::FizzBuzz is The FizzBuzz program can be written shortest.
 
