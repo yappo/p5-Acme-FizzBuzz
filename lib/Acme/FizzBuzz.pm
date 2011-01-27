@@ -84,6 +84,11 @@ Acme::FizzBuzz - The FizzBuzz program can be written shortest
 
   $ perl -MAcme::FizzBuzz -e ''
 
+or
+
+  $ export PERL5OPT="-MAcme::FizzBuzz"
+  $ echo '' | perl
+
 =head1 DESCRIPTION
 
 Acme::FizzBuzz is The FizzBuzz program can be written shortest.
