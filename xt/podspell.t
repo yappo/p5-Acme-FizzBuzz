@@ -7,3 +7,5 @@ all_pod_files_spelling_ok('lib');
 __DATA__
 Kazuhiro Osawa
 Acme::FizzBuzz
+shibuya
+
