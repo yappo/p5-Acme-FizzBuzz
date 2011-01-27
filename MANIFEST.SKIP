@@ -16,3 +16,5 @@
 \.svn/
 ^[^/]+\.yaml$
 ^[^/]+\.pl$
+\.git
+^MYMETA.yml$
