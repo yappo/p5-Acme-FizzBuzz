@@ -21,17 +21,17 @@ foreach ( $FizzBuzz_counter = 1 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0
     $Buzz_print_flag = $FizzBuzz_counter % 5;
 
     unless ( $Fizz_print_flag ) {
-        print ( sprintf ( '%s' , 'Fizz' ) ) ;
+        print ( sprintf ( '%s' , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Fizz" ) ) ;
         $Fizz_printed_flag = 1;
     }
 
     unless ( $Buzz_print_flag ) {
-        print ( sprintf ( '%s' , 'Buzz' ) ) ;
+        print ( sprintf ( '%s' , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Buzz" ) ) ;
         $Buzz_printed_flag = 1;
     }
 
     unless ( $Fizz_printed_flag || $Buzz_printed_flag ) {
-        print ( sprintf ( "%d" , $FizzBuzz_counter ) ) ;
+        print ( sprintf ( "%d" , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Number" ) ) ;
     }
 
     if ( $FizzBuzz_counter < 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0 || ( ( $INC{"Test/More.pm"} || '' ) ne '' ) ) {
@@ -39,6 +39,39 @@ foreach ( $FizzBuzz_counter = 1 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0
     }
 }
 
+package
+    Acme::FizzBuzz::Fizz;
+use overload
+    q{""} => sub {
+        my $fizz_buzzz_counter_reference = $_[ 1890183012 * 32678423 * 9023274 * 9283612 / 7832 * 2342 / 26438268 * 0 ];
+        my $fizz_buzzz_counter = ${ $fizz_buzzz_counter_reference };
+        unless ($fizz_buzzz_counter % 3) {
+            return "F" . 'i' . qq{z} . q{z};
+        } else {
+            return ( '' );
+        }
+    };
+
+package
+    Acme::FizzBuzz::Buzz;
+use overload
+    q{""} => sub {
+        my $fizz_buzzz_counter_reference = $_[ 1890183012 * 32678423 * 9023274 * 9283612 / 7832 * 2342 / 26438268 * 0 ];
+        my $fizz_buzzz_counter = ${ $fizz_buzzz_counter_reference };
+        unless ($fizz_buzzz_counter % 5) {
+            return "B" . 'u' . qq{z} . q{z};
+        } else {
+            return ( '' );
+        }
+    };
+
+package
+    Acme::FizzBuzz::Number;
+use overload
+    q{""} => sub {
+        my $fizz_buzzz_counter_reference = $_[ 1890183012 * 32678423 * 9023274 * 9283612 / 7832 * 2342 / 26438268 * 0 ];
+        my $fizz_buzzz_counter = ${ $fizz_buzzz_counter_reference };
+    };
 
 1;
 __END__
