@@ -8,31 +8,11 @@ use vars qw( $FizzBuzz_counter );
 
 
 foreach ( $FizzBuzz_counter = 1 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0 ; $FizzBuzz_counter ++ ) {
-    my $Fizz_printed_flag;
-    my $Buzz_printed_flag;
-
-    $Fizz_printed_flag = 0;
-    $Buzz_printed_flag = 0;
-    
     my $Fizz_print_flag;
     my $Buzz_print_flag;
 
     $Fizz_print_flag = $FizzBuzz_counter % 3;
     $Buzz_print_flag = $FizzBuzz_counter % 5;
-
-    unless ( $Fizz_print_flag ) {
-        print ( sprintf ( '%s' , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Fizz" ) ) ;
-        $Fizz_printed_flag = 1;
-    }
-
-    unless ( $Buzz_print_flag ) {
-        print ( sprintf ( '%s' , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Buzz" ) ) ;
-        $Buzz_printed_flag = 1;
-    }
-
-    unless ( $Fizz_printed_flag || $Buzz_printed_flag ) {
-        print ( sprintf ( "%s" , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Number" ) ) ;
-    }
 
     my $FizzBuzz_counter_num = $FizzBuzz_counter;
     my $FizzBuzz_code = sub {
@@ -40,6 +20,20 @@ foreach ( $FizzBuzz_counter = 1 ; $FizzBuzz_counter <= 1_0_0.0_0_0_0_0_0_0_0_0_0
         log ( bless \$FizzBuzz_counter_num, "Acme::FizzBuzz::LF" );
     };
     bless $FizzBuzz_code, "Acme::FizzBuzz::Guard";
+
+    unless ( $Fizz_print_flag ) {
+        print ( sprintf ( '%s' , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Fizz" ) ) ;
+        if ($Buzz_print_flag) {
+            next;
+        }
+    }
+
+    unless ( $Buzz_print_flag ) {
+        print ( sprintf ( '%s' , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Buzz" ) ) ;
+        next;
+    }
+
+    print ( sprintf ( "%s" , bless \$FizzBuzz_counter, "Acme::FizzBuzz::Number" ) ) ;
 
 #    if ( $FizzBuzz_counter < 1_0_0.0_0_0_0_0_0_0_0_0_0_0_0 || ( ( $INC{"Test/More.pm"} || '' ) ne '' ) ) {
 #        print ( sprintf ( "%s" , "\n" ) );
